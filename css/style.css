@@ -1,0 +1,16 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.navbar-brand {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    display: inline-block;
+    transition: 0.5s;
+    margin-left: 100pt;
+}
+
+.navbar-brand img {
+    height: 100%;
+}
