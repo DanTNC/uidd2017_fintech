@@ -1,6 +1,7 @@
 .navbar {
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
+    padding-top: 30pt;
 }
 
 .navbar-brand {
@@ -12,5 +13,21 @@
 }
 
 .navbar-brand img {
-    height: 100%;
+    height: 50pt;
+}
+
+.nav-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    display: inline-block;
+    transition: 0.5s;
+    padding-top: 20pt;
+}
+
+#Google_Play {
+    margin-left: 200pt;
+}
+
+.nav-btn img {
+    height: 35pt;
 }
