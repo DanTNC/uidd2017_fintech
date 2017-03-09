@@ -31,7 +31,9 @@ body {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     display: inline-block;
-    transition: 0.5s;
+}
+
+.nav-btn-left {
     padding-top: 20pt;
 }
 
@@ -68,30 +70,93 @@ body {
 }
 
 .inner-addon { 
-    position: relative; 
+    position: relative;
+    margin-top: 50pt; 
 }
 
 .inner-addon .glyphicon {
     position: absolute;
     padding: 5pt;
     pointer-events: none;
-    color: #727272;
 }
 
-.left-addon .glyphicon { 
+.left-addon { 
     left: 0px;
+}
+
+.right-addon {
+    right: 0px;
+}
+
+.glyphicon-search {
+    text-shadow: none;
+    font-size: 20pt;
+    color: black;
+    opacity: 0.54;
+    top: 10pt;
+    left: 15pt;
+}
+
+.ion-android-microphone {
+    text-shadow: none;
+    font-size: 25pt;
+    color: black;
+    opacity: 0.54;
+    top: 5pt;
+    right: 115pt;
+}
+
+.left-addon input { 
+    padding-left: 55pt;
+    height: 50pt;
+    width: 80%;
+    border-radius: 30pt;
+    font-size: 20pt;
+    color: black;
 }
 
 .navbar-right li button p {
     font-size: 20pt;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 }
 
 .navbar-right {
     margin-right: 60pt;
 }
 
-@media(width:1680px){
+.navbar-right li {
+    padding-top: 20pt;
+}
+
+.nav-btn-right {
+    padding-top: 0pt;
+    padding-bottom: 0pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+}
+
+.nav-btn-right-h:hover {
+    border-radius: 20pt;
+    background-color: #231f20;
+    height: 30pt;
+}
+
+.nav-btn-right-h:hover p{
+    color: #ffffff;
+}
+
+.nav-btn-right-scroll:hover {
+    border-radius: 20pt;
+    background-color: #ffffff;
+    height: 30pt;
+}
+
+.nav-btn-right-scroll:hover p{
+    color: #231f20;
+}
+
+@media (width:1680px){
     .navbar {
         padding-top: 50pt;
     }
@@ -103,7 +168,7 @@ body {
     .navbar-brand img {
         height: 50pt;
     }
-    .nav-btn {
+    .nav-btn-left {
         padding-top: 20pt;
     }
     #Google_Play {
@@ -119,11 +184,19 @@ body {
     .content_in_carousel p {
         font-size: 45pt;
     }
+    .inner-addon { 
+        position: relative;
+        margin-top: 50pt; 
+    }
     .inner-addon .glyphicon {
         padding: 5pt;
     }
     .left-addon input { 
-        padding-left: 30pt;
+        padding-left: 50pt;
+        height: 50pt;
+        width: 80%;
+        border-radius: 30pt;
+        font-size: 20pt;
     }
     .navbar-right li button p {
         font-size: 20pt;
@@ -146,7 +219,7 @@ body {
     .navbar-brand img {
         height: 50pt;
     }
-    .nav-btn {
+    .nav-btn-left {
         padding-top: 20pt;
     }
     #Google_Play {
@@ -172,7 +245,7 @@ body {
         font-size: 20pt;
         text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     }
-    .navbar-right li button {
+    .navbar-right li {
         padding-top: 27pt;
     }
     .navbar-right {

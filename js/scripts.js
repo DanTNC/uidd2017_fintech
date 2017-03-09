@@ -11,10 +11,14 @@ $(document).ready(function(){
             $('.navbar').css("padding-top","0pt");
             $('.navbar').css("padding-bottom","10pt");
             $('.navbar').css("background-color","#231f20");
+            $('.nav-btn-right-h').addClass('nav-btn-right-scroll');
+            $('.nav-btn-right-h').removeClass('nav-btn-right-h');            
         }else{
             $('.navbar').css("padding-top","50pt");
             $('.navbar').css("padding-bottom","0pt");
             $('.navbar').css("background-color","rgba(0, 0, 0, 0)");
+            $('.nav-btn-right-scroll').addClass('nav-btn-right-h');
+            $('.nav-btn-right-scroll').removeClass('nav-btn-right-scroll');
         }
     });
 
