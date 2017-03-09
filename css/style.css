@@ -1,7 +1,7 @@
 .navbar {
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
-    padding-top: 30pt;
+    padding-top: 50pt;
 }
 
 .navbar-brand {
@@ -25,9 +25,54 @@
 }
 
 #Google_Play {
-    margin-left: 200pt;
+    margin-left: 300pt;
 }
 
 .nav-btn img {
     height: 35pt;
+}
+
+.div_carousel {
+    position: relative;
+}
+.div_in_carousel {
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    background-color: #231f20;
+    opacity: 0.9;
+    height: 100%;
+    width: 50%;
+}
+
+.content_in_carousel {
+    padding-top: 170pt;
+    padding-left: 115pt;
+    color: #ffffff;
+    font-family: Quicksand;
+}
+
+.content_in_carousel p {
+    font-size: 45pt;
+}
+
+.inner-addon { 
+    position: relative; 
+}
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 5pt;
+    pointer-events: none;
+    color: #727272;
+}
+
+.left-addon .glyphicon { 
+    left: 0px;
+}
+
+.left-addon input { 
+    padding-left: 30pt;
 }
