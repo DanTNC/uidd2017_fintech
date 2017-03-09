@@ -1,3 +1,7 @@
+body {
+    font-family: Quicksand;
+}
+
 .navbar {
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
@@ -51,7 +55,6 @@
     padding-top: 170pt;
     padding-left: 115pt;
     color: #ffffff;
-    font-family: Quicksand;
 }
 
 .content_in_carousel p {
