@@ -1,11 +1,18 @@
 body {
     font-family: Quicksand;
+    font-weight: bold;
+    text-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#row1 {
+    color: #ffffff;
 }
 
 .navbar {
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
     padding-top: 50pt;
+    transition: 0.5s;
 }
 
 .navbar-brand {
@@ -54,7 +61,6 @@ body {
 .content_in_carousel {
     padding-top: 170pt;
     padding-left: 115pt;
-    color: #ffffff;
 }
 
 .content_in_carousel p {
@@ -76,6 +82,100 @@ body {
     left: 0px;
 }
 
-.left-addon input { 
-    padding-left: 30pt;
+.navbar-right li button p {
+    font-size: 20pt;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-right {
+    margin-right: 60pt;
+}
+
+@media(width:1680px){
+    .navbar {
+        padding-top: 50pt;
+    }
+
+    .navbar-brand {
+        margin-left: 100pt;
+    }
+
+    .navbar-brand img {
+        height: 50pt;
+    }
+    .nav-btn {
+        padding-top: 20pt;
+    }
+    #Google_Play {
+        margin-left: 200pt;
+    }
+    .nav-btn img {
+        height: 35pt;
+    }
+    .content_in_carousel {
+        padding-top: 170pt;
+        padding-left: 115pt;
+    }
+    .content_in_carousel p {
+        font-size: 45pt;
+    }
+    .inner-addon .glyphicon {
+        padding: 5pt;
+    }
+    .left-addon input { 
+        padding-left: 30pt;
+    }
+    .navbar-right li button p {
+        font-size: 20pt;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    }
+    .navbar-right {
+        margin-right: 60pt;
+    }
+}
+
+@media(width:1366px){
+    .navbar {
+        padding-top: 50pt;
+    }
+
+    .navbar-brand {
+        margin-left: 100pt;
+    }
+
+    .navbar-brand img {
+        height: 50pt;
+    }
+    .nav-btn {
+        padding-top: 20pt;
+    }
+    #Google_Play {
+        margin-left: 100pt;
+    }
+    .nav-btn img {
+        height: 35pt;
+    }
+    .content_in_carousel {
+        padding-top: 170pt;
+        padding-left: 115pt;
+    }
+    .content_in_carousel p {
+        font-size: 45pt;
+    }
+    .inner-addon .glyphicon {
+        padding: 5pt;
+    }
+    .left-addon input { 
+        padding-left: 30pt;
+    }
+    .navbar-right li button p {
+        font-size: 20pt;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    }
+    .navbar-right li button {
+        padding-top: 27pt;
+    }
+    .navbar-right {
+        margin-right: 55pt;
+    }
 }

@@ -19,9 +19,24 @@
   <body>
 
     <div class="container-fluid">
-	<div class="row">
+	<div class="row" id="row1">
 		<div class="col-md-12">
-			<div class="carousel slide" id="carousel-983122">
+			<div class="carousel slide div_carousel" id="carousel-983122">
+				<div class="row div_in_carousel">
+						<div class="col-md-12 content_in_carousel">
+							<p>
+								<strong>Tip for your <br>
+								favorite <br>
+								<u><em>Street Artist</em></u> <br>
+								with <br>
+								<u><em>Paypal.</em></u></strong>
+							</p>
+							<div class="inner-addon left-addon">
+								<i class="glyphicon glyphicon-search"></i>
+								<input type="text" class="search search_top" placeholder="Type your city.">
+							</div>
+						</div>
+					</div>
 				<ol class="carousel-indicators">
 					<li data-slide-to="0" data-target="#carousel-983122">
 					</li>
@@ -29,42 +44,12 @@
 					</li>
 				</ol>
 				<div class="carousel-inner">
-					<div class="item div_carousel">
-						<div class="row div_in_carousel">
-							<div class="col-md-12 content_in_carousel">
-								<p>
-									<strong>Tip for your <br>
-									favorite <br>
-									<u><em>Street Artist</em></u> <br>
-									with <br>
-									<u><em>Paypal.</em></u></strong>
-								</p>
-								<div class="inner-addon left-addon">
-									<i class="glyphicon glyphicon-search"></i>
-									<input type="text" class="search search_top" placeholder="Type your city.">
-								</div>
-							</div>
-						</div>
+					<div class="item">
 						<img alt="Carousel Bootstrap First" src="img/slider_1.jpg">
 						<div class="carousel-caption">
 						</div>
 					</div>
-					<div class="item div_carousel active">
-						<div class="row div_in_carousel">
-							<div class="col-md-12 content_in_carousel">
-								<p>
-									<strong>Tip for your <br>
-									favorite <br>
-									<u><em>Street Artist</em></u> <br>
-									with <br>
-									<u><em>Paypal.</em></u></strong>
-								</p>
-								<div class="inner-addon left-addon">
-									<i class="glyphicon glyphicon-search"></i>
-									<input type="text" class="search search_top" placeholder="Type your city.">
-								</div>
-							</div>
-						</div>
+					<div class="item active">
 						<img alt="Carousel Bootstrap Second" src="img/slider_2.jpg">
 						<div class="carousel-caption">
 						</div>
@@ -82,7 +67,7 @@
 					<button class="btn nav-btn" id="Google_Play">
 						<img src="img/Google Play.png">
 					</button>
-					<button class="btn nav-btn">
+					<button class="btn nav-btn" id="Apple_Store">
 						<img src="img/Apple Store.png">
 					</button>
 					<ul class="nav navbar-nav navbar-right">
