@@ -1,6 +1,5 @@
 body {
-    font-family: Quicksand;
-    font-weight: bold;
+    font-family: 'Quicksand-Bold';
     text-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -11,7 +10,8 @@ body {
 .navbar {
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
-    padding-top: 50pt;
+    padding-top: 3vw;
+    padding-bottom: 0vw;
     transition: 0.5s;
 }
 
@@ -20,29 +20,30 @@ body {
     border: none;
     display: inline-block;
     transition: 0.5s;
-    margin-left: 100pt;
+    margin-left: 7vw;
 }
 
 .navbar-brand img {
-    height: 50pt;
+    height: 4vw;
 }
 
 .nav-btn {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     display: inline-block;
+    transition: 0.5s;
 }
 
 .nav-btn-left {
-    padding-top: 20pt;
+    padding-top: 2vw;
 }
 
 #Google_Play {
-    margin-left: 300pt;
+    margin-left: 18vw;
 }
 
 .nav-btn img {
-    height: 35pt;
+    height: 2.5vw;
 }
 
 .div_carousel {
@@ -51,8 +52,8 @@ body {
 .div_in_carousel {
     float: left;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0vw;
+    top: 0vw;
     z-index: 1000;
     background-color: #231f20;
     opacity: 0.9;
@@ -61,85 +62,84 @@ body {
 }
 
 .content_in_carousel {
-    padding-top: 170pt;
-    padding-left: 115pt;
+    padding-top: 13vw;
+    padding-left: 8.5vw;
 }
 
 .content_in_carousel p {
-    font-size: 45pt;
+    font-size: 4vw;
 }
 
 .inner-addon { 
     position: relative;
-    margin-top: 50pt; 
+    margin-top: 8vw; 
 }
 
 .inner-addon .glyphicon {
     position: absolute;
-    padding: 5pt;
+    padding: 0.6vw 0.4vw;
     pointer-events: none;
 }
 
 .left-addon { 
-    left: 0px;
+    left: 0vw;
 }
 
 .right-addon {
-    right: 0px;
+    right: 0vw;
 }
 
 .glyphicon-search {
     text-shadow: none;
-    font-size: 20pt;
+    font-size: 2vw;
     color: black;
     opacity: 0.54;
-    top: 10pt;
-    left: 15pt;
+    top: 1vw;
+    left: 1.5vw;
 }
 
 .ion-android-microphone {
     text-shadow: none;
-    font-size: 25pt;
+    font-size: 2.5vw;
     color: black;
     opacity: 0.54;
-    top: 5pt;
-    right: 115pt;
+    top: 0.5vw;
+    right: 7.5vw;
 }
 
 .left-addon input { 
-    padding-left: 55pt;
-    height: 50pt;
-    width: 80%;
-    border-radius: 30pt;
-    font-size: 20pt;
+    padding-left: 5vw;
+    height: 5vw;
+    width: 85%;
+    border-radius: 3vw;
+    font-size: 2vw;
     color: black;
 }
 
 .navbar-right li button p {
-    font-size: 20pt;
+    font-size: 1.5vw;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-    font-weight: bold;
 }
 
 .navbar-right {
-    margin-right: 60pt;
+    margin-right: 6vw;
 }
 
 .navbar-right li {
-    padding-top: 20pt;
+    padding-top: 2.3vw;
 }
 
 .nav-btn-right {
-    padding-top: 0pt;
-    padding-bottom: 0pt;
-    padding-left: 20pt;
-    padding-right: 20pt;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    height: 2.3vw;
+    border-radius: 1.5vw;
 }
 
 .nav-btn-right-h:hover {
-    border-radius: 20pt;
     background-color: #231f20;
-    height: 30pt;
 }
 
 .nav-btn-right-h:hover p{
@@ -147,15 +147,13 @@ body {
 }
 
 .nav-btn-right-scroll:hover {
-    border-radius: 20pt;
     background-color: #ffffff;
-    height: 30pt;
 }
 
 .nav-btn-right-scroll:hover p{
     color: #231f20;
 }
-
+/*
 @media (width:1680px){
     .navbar {
         padding-top: 50pt;
@@ -251,4 +249,14 @@ body {
     .navbar-right {
         margin-right: 55pt;
     }
+}
+*/
+@font-face {
+    font-family: 'Quicksand-Bold';
+    src:url('../fonts/Quicksand-Bold.ttf.woff') format('woff'),
+        url('../fonts/Quicksand-Bold.ttf.svg#Quicksand-Bold') format('svg'),
+        url('../fonts/Quicksand-Bold.ttf.eot'),
+        url('../fonts/Quicksand-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
 }
