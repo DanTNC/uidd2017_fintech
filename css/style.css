@@ -153,104 +153,12 @@ body {
 .nav-btn-right-scroll:hover p{
     color: #231f20;
 }
-/*
-@media (width:1680px){
-    .navbar {
-        padding-top: 50pt;
-    }
 
-    .navbar-brand {
-        margin-left: 100pt;
-    }
-
-    .navbar-brand img {
-        height: 50pt;
-    }
-    .nav-btn-left {
-        padding-top: 20pt;
-    }
-    #Google_Play {
-        margin-left: 200pt;
-    }
-    .nav-btn img {
-        height: 35pt;
-    }
-    .content_in_carousel {
-        padding-top: 170pt;
-        padding-left: 115pt;
-    }
-    .content_in_carousel p {
-        font-size: 45pt;
-    }
-    .inner-addon { 
-        position: relative;
-        margin-top: 50pt; 
-    }
-    .inner-addon .glyphicon {
-        padding: 5pt;
-    }
-    .left-addon input { 
-        padding-left: 50pt;
-        height: 50pt;
-        width: 80%;
-        border-radius: 30pt;
-        font-size: 20pt;
-    }
-    .navbar-right li button p {
-        font-size: 20pt;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-    }
-    .navbar-right {
-        margin-right: 60pt;
-    }
+.row-step h3{
+    text-shadow: none;
+    font-size: 4.5vw;
 }
 
-@media(width:1366px){
-    .navbar {
-        padding-top: 50pt;
-    }
-
-    .navbar-brand {
-        margin-left: 100pt;
-    }
-
-    .navbar-brand img {
-        height: 50pt;
-    }
-    .nav-btn-left {
-        padding-top: 20pt;
-    }
-    #Google_Play {
-        margin-left: 100pt;
-    }
-    .nav-btn img {
-        height: 35pt;
-    }
-    .content_in_carousel {
-        padding-top: 170pt;
-        padding-left: 115pt;
-    }
-    .content_in_carousel p {
-        font-size: 45pt;
-    }
-    .inner-addon .glyphicon {
-        padding: 5pt;
-    }
-    .left-addon input { 
-        padding-left: 30pt;
-    }
-    .navbar-right li button p {
-        font-size: 20pt;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-    }
-    .navbar-right li {
-        padding-top: 27pt;
-    }
-    .navbar-right {
-        margin-right: 55pt;
-    }
-}
-*/
 @font-face {
     font-family: 'Quicksand-Bold';
     src:url('../fonts/Quicksand-Bold.ttf.woff') format('woff'),
