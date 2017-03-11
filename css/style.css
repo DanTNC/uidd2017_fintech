@@ -159,6 +159,56 @@ body {
     font-size: 4.5vw;
 }
 
+#pays {
+    width: 100%;
+}
+
+.row3 {
+    background-image: url("../img/bg.png");
+    background-size: 100%;
+}
+
+.row3 div img {
+    width: 100%;
+}
+
+#arrow {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    top: 112vw;
+}
+
+#arrow img {
+    width: 10vw;
+}
+
+.google_map {
+    text-shadow: none;
+}
+
+.google_map div div div h2 {
+    color: #1a1718;
+}
+
+.google_map div div div p {
+    color: #4a4a4a;
+}
+
+.search_it {
+    background-color: #f4511c;
+}
+
+input {
+    border: none;
+    box-shadow: 0 4px 1px 0 
+    rgba(0, 0, 0, 0.24), 0 0 
+    1px 0 rgba(0, 0, 0, 0.12);
+}
+
 @font-face {
     font-family: 'Quicksand-Bold';
     src:url('../fonts/Quicksand-Bold.ttf.woff') format('woff'),
