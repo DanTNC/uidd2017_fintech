@@ -236,6 +236,19 @@ input {
     width: 50%;
 }
 
+.content_in_google_map {
+    padding-left: 7vw;
+    padding-top: 5vw
+}
+
+.div_in_google_map div h2 {
+    font-size: 5vw;
+}
+
+.div_in_google_map div p {
+    font-size: 2vw;
+}
+
 @font-face {
     font-family: 'Quicksand-Bold';
     src:url('../fonts/Quicksand-Bold.ttf.woff') format('woff'),
