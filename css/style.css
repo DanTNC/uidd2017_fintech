@@ -3,6 +3,12 @@ body {
     text-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #row1 {
     color: #ffffff;
 }
@@ -49,6 +55,7 @@ body {
 .div_carousel {
     position: relative;
 }
+
 .div_in_carousel {
     float: left;
     position: absolute;
@@ -179,7 +186,8 @@ body {
     transform: translateY(-50%) translateX(-50%);
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    top: 112vw;
+    top: 111.6vw;
+    z-index: 1000;
 }
 
 #arrow img {
@@ -207,6 +215,25 @@ input {
     box-shadow: 0 4px 1px 0 
     rgba(0, 0, 0, 0.24), 0 0 
     1px 0 rgba(0, 0, 0, 0.12);
+}
+
+#map {
+    height: 40vw;
+}
+
+.google_map {
+    position: relative;
+}
+
+.div_in_google_map {
+    float: left;
+    position: absolute;
+    left: 0vw;
+    top: 0vw;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 50%;
 }
 
 @font-face {

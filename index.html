@@ -24,21 +24,21 @@
 		<div class="col-md-12">
 			<div class="carousel slide div_carousel" id="carousel-983122">
 				<div class="row div_in_carousel">
-						<div class="col-md-12 content_in_carousel">
-							<p>
-								Tip for your <br>
-								favorite <br>
-								<u><em>Street Artist</em></u> <br>
-								with <br>
-								<u><em>Paypal.</em></u>
-							</p>
-							<div class="inner-addon left-addon right-addon">
-								<i class="glyphicon glyphicon-search"></i>
-								<i class="glyphicon ionicons ion-android-microphone"></i>
-								<input type="text" class="search search_top" placeholder="Type your city.">
-							</div>
+					<div class="col-md-12 content_in_carousel">
+						<p>
+							Tip for your <br>
+							favorite <br>
+							<u><em>Street Artist</em></u> <br>
+							with <br>
+							<u><em>Paypal.</em></u>
+						</p>
+						<div class="inner-addon left-addon right-addon">
+							<i class="glyphicon glyphicon-search"></i>
+							<i class="glyphicon ionicons ion-android-microphone"></i>
+							<input type="text" class="search search_top" placeholder="Type your city.">
 						</div>
 					</div>
+				</div>
 				<ol class="carousel-indicators">
 					<li data-slide-to="0" data-target="#carousel-983122">
 					</li>
@@ -104,8 +104,8 @@
 	</div>
 	<div class="row google_map">
 		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-6">
+			<div class="row div_in_google_map">
+				<div class="col-md-12">
 					<h2>
 						Find your city.
 					</h2>
@@ -121,9 +121,23 @@
 						Search it!
 					</button>
 				</div>
-				<div class="col-md-6">
-				</div>
 			</div>
+			<div id="map">
+			</div>
+			<script>
+				var map;
+				function initMap() {
+					// Create a map object and specify the DOM element for display.
+					map = new google.maps.Map(document.getElementById('map'), {
+					center: {lat: 22.9997281, lng: 120.2270277},
+					scrollwheel: false,
+					disableDefaultUI: true,
+					zoom: 11
+					});
+				}
+			</script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR6karV1VluUdop9oZ_hhE4uBRHLeh3ys&callback=initMap"
+			async defer></script>
 		</div>
 	</div>
 	<div class="row">
@@ -250,6 +264,9 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR6karV1VluUdop9oZ_hhE4uBRHLeh3ys&callback=initMap"
+    async defer></script-->
+	<script src="js/scripts.js"></script>
+
   </body>
 </html>

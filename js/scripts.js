@@ -35,10 +35,19 @@ $(document).ready(function(){
     $('#Apple_Store').mouseout(function(){
         $('#Apple_Store img').attr("src","img/Apple Store.png");
     });
+
+    $('iframe').load(function(){
+        $('.place-card').css("display","none");
+        $('.login-control').css("display","none");
+    });
+
 })
 
-/*
-    padding-top: 0pt;
-    padding-bottom: 10pt;
-    background-color: #231f20;
-*/
+/*function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 120, lng: 23},
+        scrollwheel: false,
+        zoom: 8
+    });
+}*/ 
