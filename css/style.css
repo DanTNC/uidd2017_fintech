@@ -237,6 +237,11 @@ html, body {
     border: none;
 }
 
+.search_it:active, .summit:active, .search_it:focus, .summit:focus {
+    background-color: #f4511c;
+    color: #231f20;
+}
+
 input {
     border: none;
     box-shadow: 0 4px 1px 0 

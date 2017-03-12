@@ -36,11 +36,6 @@ $(document).ready(function(){
         $('#Apple_Store img').attr("src","img/Apple Store.png");
     });
 
-    $('iframe').load(function(){
-        $('.place-card').css("display","none");
-        $('.login-control').css("display","none");
-    });
-
     $('.dropdown-menu li a').click(function(){
         if($(this).attr("id") == "default"){
             $('button.col4-input').html( "Choose your city" );
@@ -53,23 +48,70 @@ $(document).ready(function(){
         }
     });
 
-})
+    $("#arrow").click(function(event) {
+        scroll_map(event);
+    });
 
-/*
-                <div class="btn-group divider">
-					<div class="cnvc">					
-						<button class="btn btn-default" type="button">
-							Company
-						</button> 
-						<button class="btn btn-default" type="button">
-							News
-						</button> 
-						<button class="btn btn-default" type="button">
-							Vote
-						</button> 
-						<button class="btn btn-default" type="button">
-							Contact
-						</button>
-					</div>
-				</div>
-}*/ 
+    $(".search_top").change(function(event) {
+        if($(".search_top").is(":focus") === true){
+            scroll_map(event);
+        } 
+    });
+
+    $(".search").change(function() {
+        if($(".search").is(":focus") === true){
+            for(var i = 0 ; i < 2 ; i++){
+                $(".search")[i].value = $(this).val();
+            }
+            search_map($(this).val());
+        } 
+    });
+
+    $(".search_it").click(function(){
+        for(var i = 0 ; i < 2 ; i++){
+            $(".search")[i].value = $(".div_in_google_map div div input").val();
+        }
+        search_map($(".div_in_google_map div div input").val());
+    });
+});
+
+var scroll_map = (event) => {
+    event.preventDefault();
+
+    // Store hash
+    var hash = $("#arrow a").attr("href");
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+        scrollTop: $(hash).offset().top
+        }, 400, function(){
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            //window.location.hash = hash;
+    });
+}
+
+var search_map = (address) => {
+    $.getJSON("https://maps.googleapis.com/maps/api/geocode/json",
+        {"address":address,"key":"AIzaSyDR6karV1VluUdop9oZ_hhE4uBRHLeh3ys"},
+        function(data){
+            var loc = data.results[0].geometry.location;
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: loc.lat, lng: loc.lng},
+                scrollwheel: false,
+                disableDefaultUI: true,
+                zoom: 11
+            });
+        }
+    );
+}
+
+var initMap = () => {
+	// Create a map object and specify the DOM element for display.
+	var map = new google.maps.Map(document.getElementById('map'), {
+	center: {lat: 22.9997281, lng: 120.2270277},
+	scrollwheel: false,
+	disableDefaultUI: true,
+	zoom: 11
+	});
+}
