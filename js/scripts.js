@@ -10,7 +10,7 @@ $(document).ready(function(){
         if($(window).scrollTop()!=0){
             $('.navbar').css("padding-top","0vw");
             $('.navbar').css("padding-bottom","1.3vw");
-            $('.navbar').css("background-color","#231f20");
+            $('.navbar').css("background-color","rgba(35, 31, 35, 0.9)");
             $('.nav-btn-right-h').addClass('nav-btn-right-scroll');
             $('.nav-btn-right-h').removeClass('nav-btn-right-h');            
         }else{
@@ -41,13 +41,35 @@ $(document).ready(function(){
         $('.login-control').css("display","none");
     });
 
+    $('.dropdown-menu li a').click(function(){
+        if($(this).attr("id") == "default"){
+            $('button.col4-input').html( "Choose your city" );
+            $('button.col4-input').css("color","#727272");
+            $('button.col4-input:hover').css("color","#727272");
+        }else{
+            $('button.col4-input').html( $(this).text() );
+            $('button.col4-input').css("color","#231f20");
+            $('button.col4-input:hover').css("color","#231f20");
+        }
+    });
+
 })
 
-/*function initMap() {
-    // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 120, lng: 23},
-        scrollwheel: false,
-        zoom: 8
-    });
+/*
+                <div class="btn-group divider">
+					<div class="cnvc">					
+						<button class="btn btn-default" type="button">
+							Company
+						</button> 
+						<button class="btn btn-default" type="button">
+							News
+						</button> 
+						<button class="btn btn-default" type="button">
+							Vote
+						</button> 
+						<button class="btn btn-default" type="button">
+							Contact
+						</button>
+					</div>
+				</div>
 }*/ 

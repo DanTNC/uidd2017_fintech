@@ -9,6 +9,11 @@ html, body {
     padding: 0;
 }
 
+.col-md-12 {
+    padding-left: 0vw;
+    padding-right: 0vw;
+}
+
 #row1 {
     color: #ffffff;
 }
@@ -186,7 +191,7 @@ html, body {
     transform: translateY(-50%) translateX(-50%);
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    top: 111.6vw;
+    top: 114.1vw;
     z-index: 1000;
 }
 
@@ -208,6 +213,28 @@ html, body {
 
 .search_it {
     background-color: #f4511c;
+    margin-top: 2vw;
+    height: 4vw;
+    width: 37%;
+    border-radius: 3vw;
+    font-size: 2vw;
+    color: #231f20;
+    border: none;
+}
+
+.search_it:hover, .summit:hover {
+    background-color: #231f20;
+    color: #ffffff;
+}
+
+.summit {
+    background-color: #f4511c;
+    height: 4vw;
+    width: 50%;
+    border-radius: 3vw;
+    font-size: 2vw;
+    color: #231f20;
+    border: none;
 }
 
 input {
@@ -218,7 +245,7 @@ input {
 }
 
 #map {
-    height: 40vw;
+    height: 47vw;
 }
 
 .google_map {
@@ -237,16 +264,142 @@ input {
 }
 
 .content_in_google_map {
-    padding-left: 7vw;
+    padding-left: 10vw;
     padding-top: 5vw
 }
 
 .div_in_google_map div h2 {
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 .div_in_google_map div p {
+    font-size: 2.3vw;
+}
+
+.row4 {
+    background-image: url("../img/slider_2_flip.jpg");
+    background-size: cover;
+    height: 40vw;
+}
+
+.col4 {
+    background-color: rgba(35,31,32,0.49);
+    height: 100%;
+    padding: 6vw 8vw;
+    color: #ffffff;
+}
+
+.col4 h2 {
+    font-size: 3.5vw;
+}
+
+.col4 p {
     font-size: 2vw;
+}
+
+.col4-input{
+    padding-left: 1vw;
+    height: 4vw;
+    width: 90%;
+    border-radius: 3vw;
+    font-size: 2vw;
+    color: black;
+}
+
+.col4-drop {
+    padding-left: 5vw;
+    height: 4vw;
+    border-radius: 3vw;
+    font-size: 2vw;
+    width: 3vw;
+    color: black;
+}
+
+.col4-drop img {
+    width: 1vw;
+    margin-right: 1vw;
+}
+
+button.col4-input {
+    width: 20vw;
+    color: #727272;
+}
+
+button.col4-input:hover {
+    background-color: #ffffff;
+    color: #727272;
+}
+
+input.col4-input {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.row4-row {
+    margin-top: 6vw;
+}
+
+.row4-row div div button {
+    background-color: #ffffff;
+    border: none;
+}
+
+.dropdown-menu li a {
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.dropdown-menu li a:hover {
+    color: #f4511c;
+}
+
+.dropdown-menu {
+    left: 13.4vw;
+}
+
+.row5 {
+    background-color: #231f20;
+    height: 40vw;
+}
+
+.row5 div center {
+    padding: 4vw;
+}
+
+.row5 div center img {
+    height: 4vw;
+}
+
+.row5 div center h3 {
+    font-size: 4vw;
+    color: #f4511c;
+}
+
+.row5 div center h1 {
+    color: #9b9b9b;
+    font-size: 2vw;
+}
+
+.cnvc1 {
+    margin: 3vw;
+}
+
+.cnvc1 a {
+    color: #ffffff;
+    margin-left: 0.9vw;
+    margin-right: 0.9vw;
+    font-size: 2.2vw;
+    cursor: pointer;
+}
+
+.cnvc1 a:hover {
+    color: #ffffff;
+}
+
+.appgoo button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    margin: 1vw 3vw 1vw 3vw;
 }
 
 @font-face {
@@ -257,4 +410,17 @@ input {
         url('../fonts/Quicksand-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
     font-weight: normal;
     font-style: normal;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #727272;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #727272;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #727272;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #727272;
 }
