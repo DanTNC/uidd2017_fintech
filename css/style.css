@@ -159,6 +159,10 @@ html, body {
     border-radius: 1.5vw;
 }
 
+.nav-btn-right:focus {
+    color: #ffffff; 
+}
+
 .nav-btn-right-h:hover {
     background-color: #231f20;
 }
