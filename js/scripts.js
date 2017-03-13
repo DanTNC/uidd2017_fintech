@@ -1,5 +1,33 @@
 // Empty JS for your own code to be here
 
+var recognizing = false;
+
+var recognition = new webkitSpeechRecognition();
+recognition.continuous=true;
+recognition.interimResults=true;
+recognition.lang="en-US";
+//recognition.lang="cmn-Hant-TW";
+recognition.onstart = () => {
+    console.log('start recognition...');
+    recognizing = true;
+};
+
+recognition.onend = () => {
+    console.log('stop recognition!');
+    recognizing = false;
+};
+
+recognition.onerror = () => {
+    console.log(event.error);
+}
+
+recognition.onresult=function(event){
+    var i = event.resultIndex;
+    var j = event.results[i].length-1;
+    console.log(event.results[i][j].transcript);
+    //return event.results[0][0].transcript;
+};
+
 $(document).ready(function(){
     $('.carousel.slide').carousel({
         interval: 5000,
@@ -58,20 +86,42 @@ $(document).ready(function(){
         } 
     });
 
-    $(".search").change(function() {
+    $(".search").change(function(event) {
         if($(".search").is(":focus") === true){
             for(var i = 0 ; i < 2 ; i++){
                 $(".search")[i].value = $(this).val();
             }
+            scroll_map(event);
             search_map($(this).val());
         } 
     });
 
-    $(".search_it").click(function(){
+    $(".search_it").click(function(event){
         for(var i = 0 ; i < 2 ; i++){
             $(".search")[i].value = $(".div_in_google_map div div input").val();
         }
+        scroll_map(event);
         search_map($(".div_in_google_map div div input").val());
+    });
+
+    $(".glyphicon-search").click(function(event){
+        for(var i = 0 ; i < 2 ; i++){
+            $(".search")[i].value = $(this).parent().find("input").val();
+        }
+        scroll_map(event);
+        search_map($(this).parent().find("input").val());
+    });
+
+    $(".ion-android-microphone").click(function(event){
+        if(recognizing==false){
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("This function is only supported in Chrome 25 or higher version.");
+            } else {
+                recognition.start();
+            }
+        }else{
+            recognition.stop();
+        }
     });
 });
 
@@ -103,6 +153,15 @@ var search_map = (address) => {
 				zoomControl: true,
                 zoom: 11
             });
+            var Append_ = true;
+            $(".dropdown-menu li").each(function(){
+                if ($(this).find("a").text()==address){
+                    Append_ = false;
+                }
+            });
+            if(Append_){
+                $(".dropdown-menu").append("<li><a>"+address+"</a></li>");
+            }
         }
     );
 }

@@ -76,8 +76,7 @@ html, body {
     left: 0vw;
     top: 0vw;
     z-index: 1000;
-    background-color: #231f20;
-    opacity: 0.9;
+    background-color: rgba(35,31,32,0.9);
     height: 100%;
     width: 50%;
 }
@@ -99,7 +98,14 @@ html, body {
 .inner-addon .glyphicon {
     position: absolute;
     padding: 0.6vw 0.4vw;
-    pointer-events: none;
+}
+
+.glyphicon {
+    cursor: pointer;
+}
+
+.glyphicon:hover {
+    opacity: 1;
 }
 
 .left-addon { 
@@ -313,6 +319,10 @@ input {
 
 .col4 p {
     font-size: 2vw;
+}
+
+.row4-row div div button {
+    box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .col4-input{
