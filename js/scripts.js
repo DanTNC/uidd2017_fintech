@@ -2,12 +2,15 @@
 
 var recognizing = false;
 
+var recognition_text = "";
+
 var recognition = new webkitSpeechRecognition();
-recognition.continuous=true;
+recognition.continuous=false;
 recognition.interimResults=true;
 recognition.lang="en-US";
 //recognition.lang="cmn-Hant-TW";
 recognition.onstart = () => {
+    recognition_text = "";
     console.log('start recognition...');
     recognizing = true;
 };
@@ -15,6 +18,13 @@ recognition.onstart = () => {
 recognition.onend = () => {
     console.log('stop recognition!');
     recognizing = false;
+    if(recognition_text){
+        for(var i = 0 ; i < 2 ; i++){
+            $(".search")[i].value = recognition_text;
+        }
+        scroll_map();
+        search_map(recognition_text);
+    }
 };
 
 recognition.onerror = () => {
@@ -22,10 +32,14 @@ recognition.onerror = () => {
 }
 
 recognition.onresult=function(event){
-    var i = event.resultIndex;
+    /*var i = event.resultIndex;
     var j = event.results[i].length-1;
-    console.log(event.results[i][j].transcript);
-    //return event.results[0][0].transcript;
+    console.log(event.results[i][j].transcript);*/
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+          recognition_text = event.results[i][0].transcript;
+      }
+    }
 };
 
 $(document).ready(function(){
@@ -126,7 +140,9 @@ $(document).ready(function(){
 });
 
 var scroll_map = (event) => {
-    event.preventDefault();
+    if(event){
+        event.preventDefault();
+    }
 
     // Store hash
     var hash = $("#arrow a").attr("href");
