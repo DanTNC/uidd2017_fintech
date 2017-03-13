@@ -177,6 +177,17 @@ var search_map = (address) => {
             });
             if(Append_){
                 $(".dropdown-menu").append("<li><a>"+address+"</a></li>");
+                $('.dropdown-menu li a').click(function(){
+                if($(this).attr("id") == "default"){
+                    $('button.col4-input').html( "Choose your city" );
+                    $('button.col4-input').css("color","#727272");
+                    $('button.col4-input:hover').css("color","#727272");
+                }else{
+                    $('button.col4-input').html( $(this).text() );
+                    $('button.col4-input').css("color","#231f20");
+                    $('button.col4-input:hover').css("color","#231f20");
+                }
+    });
             }
         }
     );
