@@ -100,6 +100,7 @@ var search_map = (address) => {
                 center: {lat: loc.lat, lng: loc.lng},
                 scrollwheel: false,
                 disableDefaultUI: true,
+				zoomControl: true,
                 zoom: 11
             });
         }
@@ -112,6 +113,7 @@ var initMap = () => {
 	center: {lat: 22.9997281, lng: 120.2270277},
 	scrollwheel: false,
 	disableDefaultUI: true,
+	zoomControl: true,
 	zoom: 11
 	});
 }
