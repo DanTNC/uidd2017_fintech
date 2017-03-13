@@ -9,7 +9,7 @@ html, body {
     padding: 0;
 }
 
-.search:focus:hover {
+.search_it:focus:hover, .summit:focus:hover {
     background-color: #231f20;
     color: #ffffff;
 }
