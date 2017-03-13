@@ -9,6 +9,10 @@ html, body {
     padding: 0;
 }
 
+*:focus, .btn:focus, .btn:active, .btn:active:focus{
+    outline: none;
+}
+
 .col-md-12 {
     padding-left: 0vw;
     padding-right: 0vw;
@@ -330,7 +334,7 @@ button.col4-input {
     color: #727272;
 }
 
-button.col4-input:hover {
+button.col4-input:hover, button.col4-input:active,  button.col4-input:active:hover, button.col4-input:focus{
     background-color: #ffffff;
     color: #727272;
 }
