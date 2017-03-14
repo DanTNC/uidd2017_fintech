@@ -29,6 +29,20 @@ recognition.onend = () => {
 
 recognition.onerror = () => {
     console.log(event.error);
+    switch(event.error){
+        case "not-allowed":
+            $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> Microphone access is denied!');
+            break;
+        case "no-speech":
+            $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> You didn\'t say anything!');
+            break;
+        case "audio-capture":
+            $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> No microphone is detected!');
+            break;
+        default:
+    }
+    
+    $("#myModal").modal();
 }
 
 recognition.onresult=function(event){
@@ -129,7 +143,8 @@ $(document).ready(function(){
     $(".ion-android-microphone").click(function(event){
         if(recognizing==false){
             if (!('webkitSpeechRecognition' in window)) {
-                alert("This function is only supported in Chrome 25 or higher version.");
+                $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> This function is only supported in Chrome 25 or higher version.');
+                $("#myModal").modal();
             } else {
                 recognition.start();
             }
