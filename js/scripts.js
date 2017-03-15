@@ -146,7 +146,7 @@ $(document).ready(function(){
                 $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> This function is only supported in Chrome 25 or higher version.');
                 $("#myModal").modal();
             } else {
-                $(".alert").html('<button type="button" class="close" data-dismiss="modal" onclick=()=>{recognition.lang="en-US";}>English</button><button type="button" class="close" data-dismiss="modal" onclick=()=>{recognition.lang="cmn-Hant-TW";}>中文</button><strong>Error!</strong> Choose language.');
+                $(".alert").html('<button type="button" class="close" data-dismiss="modal" onclick="()=>{recognition.lang="en-US";}">English</button><button type="button" class="close" data-dismiss="modal" onclick="()=>{recognition.lang="cmn-Hant-TW";}">中文</button><strong>Error!</strong> Choose language.');
                 $("#myModal").modal();
                 recognition.start();
             }
