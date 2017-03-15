@@ -321,7 +321,12 @@ input {
     font-size: 2vw;
 }
 
-.row4-row div div button {
+.row4-row div div .col4-input {
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.24);
+    z-index: 2;
+}
+
+.row4-row div div .col4-drop {
     box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
 }
 

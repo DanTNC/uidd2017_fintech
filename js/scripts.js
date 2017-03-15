@@ -9,54 +9,74 @@ if ('webkitSpeechRecognition' in window) {
     recognition.lang="en-US";
     //recognition.lang="cmn-Hant-TW";
     recognition.onstart = () => {
+        $(".alert").html('<img src="https://media.giphy.com/media/xTk9ZGzPbqz5cP9Zg4/giphy.gif">');
+        $("#myModal").modal();
         recognition_text = "";
         console.log('start recognition...');
         recognizing = true;
     };
-}
 
-recognition.onend = () => {
-    console.log('stop recognition!');
-    recognizing = false;
-    if(recognition_text){
-        for(var i = 0 ; i < 2 ; i++){
-            $(".search")[i].value = recognition_text;
+    recognition.onend = () => {
+        $("#myModal").modal("hide");
+        console.log('stop recognition!');
+        recognizing = false;
+        if(recognition_text){
+            for(var i = 0 ; i < 2 ; i++){
+                $(".search")[i].value = recognition_text;
+            }
+            scroll_map();
+            search_map(recognition_text);
         }
-        scroll_map();
-        search_map(recognition_text);
-    }
-};
+    };
 
-recognition.onerror = () => {
-    console.log(event.error);
-    switch(event.error){
-        case "not-allowed":
-            $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> Microphone access is denied!');
-            break;
-        case "no-speech":
-            $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> You didn\'t say anything!');
-            break;
-        case "audio-capture":
-            $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> No microphone is detected!');
-            break;
-        default:
+    recognition.onerror = () => {
+        console.log(event.error);
+        switch(event.error){
+            case "not-allowed":
+                $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> Microphone access is denied!');
+                break;
+            case "no-speech":
+                $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> You didn\'t say anything!');
+                break;
+            case "audio-capture":
+                $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> No microphone is detected!');
+                break;
+            default:
+        }
+        
+        $("#myModal").modal();
     }
-    
-    $("#myModal").modal();
+
+    recognition.onresult=function(event){
+        /*var i = event.resultIndex;
+        var j = event.results[i].length-1;
+        console.log(event.results[i][j].transcript);*/
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+                recognition_text = event.results[i][0].transcript;
+            }
+        }
+    };
 }
 
-recognition.onresult=function(event){
-    /*var i = event.resultIndex;
-    var j = event.results[i].length-1;
-    console.log(event.results[i][j].transcript);*/
-    for (var i = event.resultIndex; i < event.results.length; ++i) {
-      if (event.results[i].isFinal) {
-          recognition_text = event.results[i][0].transcript;
-      }
-    }
-};
+
 
 $(document).ready(function(){
+
+    if($(window).scrollTop()!=0){
+        $('.navbar').css("padding-top","0vw");
+        $('.navbar').css("padding-bottom","1.3vw");
+        $('.navbar').css("background-color","rgba(35, 31, 35, 0.9)");
+        $('.nav-btn-right-h').addClass('nav-btn-right-scroll');
+        $('.nav-btn-right-h').removeClass('nav-btn-right-h');            
+    }else{
+        $('.navbar').css("padding-top","3vw");
+        $('.navbar').css("padding-bottom","0vw");
+        $('.navbar').css("background-color","rgba(0, 0, 0, 0)");
+        $('.nav-btn-right-scroll').addClass('nav-btn-right-h');
+        $('.nav-btn-right-scroll').removeClass('nav-btn-right-scroll');
+    }
+
     $('.carousel.slide').carousel({
         interval: 5000,
         cycle: true
