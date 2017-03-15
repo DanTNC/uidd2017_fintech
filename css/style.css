@@ -239,6 +239,7 @@ html, body {
     font-size: 2vw;
     color: #231f20;
     border: none;
+    padding: 0vw;
 }
 
 .search_it:hover, .summit:hover {
@@ -254,6 +255,7 @@ html, body {
     font-size: 2vw;
     color: #231f20;
     border: none;
+    padding: 0vw;
 }
 
 .search_it:active, .summit:active, .search_it:focus, .summit:focus {
@@ -356,6 +358,7 @@ input {
 button.col4-input {
     width: 20vw;
     color: #727272;
+    padding: 0vw;
 }
 
 button.col4-input:hover, button.col4-input:active,  button.col4-input:active:hover, button.col4-input:focus{
