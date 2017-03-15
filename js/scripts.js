@@ -1,19 +1,19 @@
-// Empty JS for your own code to be here
-
 var recognizing = false;
 
 var recognition_text = "";
 
-var recognition = new webkitSpeechRecognition();
-recognition.continuous=false;
-recognition.interimResults=true;
-recognition.lang="en-US";
-//recognition.lang="cmn-Hant-TW";
-recognition.onstart = () => {
-    recognition_text = "";
-    console.log('start recognition...');
-    recognizing = true;
-};
+if ('webkitSpeechRecognition' in window) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous=false;
+    recognition.interimResults=true;
+    recognition.lang="en-US";
+    //recognition.lang="cmn-Hant-TW";
+    recognition.onstart = () => {
+        recognition_text = "";
+        console.log('start recognition...');
+        recognizing = true;
+    };
+}
 
 recognition.onend = () => {
     console.log('stop recognition!');
@@ -146,6 +146,8 @@ $(document).ready(function(){
                 $(".alert").html('<button type="button" class="close" data-dismiss="modal">&times;</button><strong>Error!</strong> This function is only supported in Chrome 25 or higher version.');
                 $("#myModal").modal();
             } else {
+                $(".alert").html('<button type="button" class="close" data-dismiss="modal" onclick=()=>{recognition.lang="en-US";}>English</button><button type="button" class="close" data-dismiss="modal" onclick=()=>{recognition.lang="cmn-Hant-TW";}>中文</button><strong>Error!</strong> Choose language.');
+                $("#myModal").modal();
                 recognition.start();
             }
         }else{
