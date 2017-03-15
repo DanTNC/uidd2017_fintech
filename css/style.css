@@ -384,6 +384,8 @@ input.col4-input {
 .dropdown-menu li a {
     text-shadow: none;
     cursor: pointer;
+    font-size: 0.9vw;
+    padding: 0.2vw 1vw;
 }
 
 .dropdown-menu li a:hover {
@@ -391,7 +393,8 @@ input.col4-input {
 }
 
 .dropdown-menu {
-    left: 11.2vw;
+    left: 14vw;
+    min-width: 9vw;
 }
 
 .row5 {
