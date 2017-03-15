@@ -10,7 +10,9 @@ if ('webkitSpeechRecognition' in window) {
     //recognition.lang="cmn-Hant-TW";
     recognition.onstart = () => {
         $(".alert").html('<img src="https://media.giphy.com/media/xTk9ZGzPbqz5cP9Zg4/giphy.gif" style="width:100%;">');
-        $("#myModal").modal();
+        $(".alert img").onload(()=>{
+            $("#myModal").modal();
+        });
         recognition_text = "";
         console.log('start recognition...');
         recognizing = true;
