@@ -141,6 +141,7 @@ html, body {
     border-radius: 3vw;
     font-size: 2vw;
     color: black;
+    padding-right: 5vw;
 }
 
 .navbar-right li button p {
