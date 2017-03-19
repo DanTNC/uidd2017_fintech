@@ -356,6 +356,12 @@ input {
     margin-right: 1vw;
 }
 
+#drop {
+    padding-top: 0.2vw;
+    padding-bottom: 0.2vw;
+    padding-right: 0.1vw;
+}
+
 button.col4-input {
     width: 20vw;
     color: #727272;
