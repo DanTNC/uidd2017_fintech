@@ -20,9 +20,9 @@ if ('webkitSpeechRecognition' in window) {
         console.log('stop recognition!');
         recognizing = false;
         if(recognition_text){
-            for(var i = 0 ; i < 2 ; i++){
+            /*for(var i = 0 ; i < 2 ; i++){
                 $(".search")[i].value = recognition_text;
-            }
+            }*/
             scroll_map();
             search_map(recognition_text);
         }
@@ -127,34 +127,28 @@ $(document).ready(function(){
         scroll_map(event);
     });
 
-    $(".search_top").change(function(event) {
-        if($(".search_top").is(":focus") === true){
-            scroll_map(event);
-        } 
-    });
-
     $(".search").change(function(event) {
         if($(".search").is(":focus") === true){
-            for(var i = 0 ; i < 2 ; i++){
+            /*for(var i = 0 ; i < 2 ; i++){
                 $(".search")[i].value = $(this).val();
-            }
+            }*/
             scroll_map(event);
             search_map($(this).val());
         } 
     });
 
     $(".search_it").click(function(event){
-        for(var i = 0 ; i < 2 ; i++){
+        /*for(var i = 0 ; i < 2 ; i++){
             $(".search")[i].value = $(".div_in_google_map div div input").val();
-        }
+        }*/
         scroll_map(event);
         search_map($(".div_in_google_map div div input").val());
     });
 
     $(".glyphicon-search").click(function(event){
-        for(var i = 0 ; i < 2 ; i++){
+        /*for(var i = 0 ; i < 2 ; i++){
             $(".search")[i].value = $(this).parent().find("input").val();
-        }
+        }*/
         scroll_map(event);
         search_map($(this).parent().find("input").val());
     });
@@ -189,12 +183,57 @@ var scroll_map = (event) => {
             // Add hash (#) to URL when done scrolling (default click behavior)
             //window.location.hash = hash;
     });
-}
+};
+
+var correct_add = (Ar, str) => {
+    var pati = [];
+	var rate = 0;
+	var str1;
+    Ar.forEach(function(item){
+		str1 = "";
+		if(str1 = item.types[0]){
+			str1 = item.long_name;
+			rate = 0;
+			console.log(str1);
+			for(var i = 0, j = 0, matched = 0, len = str.length;i<len;){
+				console.log([i,j]);
+				if(str[i].toUpperCase() == str1[j].toUpperCase()){
+					rate++;
+					i++;
+					if(j == str1.length-1){
+						break;
+					}
+					j++;
+					matched=j;
+				}else{
+					if(j == str1.length-1){
+						j = matched;
+						i++;
+					}else{
+						j++;
+					}
+				}
+			}
+			pati.push([rate,str1]);
+		}
+    });
+	if(!pati) return str;
+	var Corrected = pati[0];
+	pati.forEach(function(item){
+		if(item[0]>Corrected[0]){
+			Corrected = item;
+		}
+	});
+	return Corrected[1];
+};
 
 var search_map = (address) => {
     $.getJSON("https://maps.googleapis.com/maps/api/geocode/json",
-        {"address":address,"key":"AIzaSyDR6karV1VluUdop9oZ_hhE4uBRHLeh3ys"},
+        {"address":address,"key":"AIzaSyDR6karV1VluUdop9oZ_hhE4uBRHLeh3ys","language":"en"},
         function(data){
+            var addr = data.results[0].address_components;
+            addr = correct_add(addr,address);
+            $(".search").val(addr);
             var loc = data.results[0].geometry.location;
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: loc.lat, lng: loc.lng},
@@ -205,27 +244,27 @@ var search_map = (address) => {
             });
             var Append_ = true;
             $(".dropdown-menu li").each(function(){
-                if ($(this).find("a").text()==address){
+                if ($(this).find("a").text().toUpperCase()==addr.toUpperCase()){
                     Append_ = false;
                 }
             });
             if(Append_){
-                $(".dropdown-menu").append("<li><a>"+address+"</a></li>");
+                $(".dropdown-menu").append("<li><a>"+addr+"</a></li>");
                 $('.dropdown-menu li a').click(function(){
-                if($(this).attr("id") == "default"){
-                    $('button.col4-input').html( "Choose your city" );
-                    $('button.col4-input').css("color","#727272");
-                    $('button.col4-input:hover').css("color","#727272");
-                }else{
-                    $('button.col4-input').html( $(this).text() );
-                    $('button.col4-input').css("color","#231f20");
-                    $('button.col4-input:hover').css("color","#231f20");
-                }
-    });
+                    if($(this).attr("id") == "default"){
+                        $('button.col4-input').html( "Choose your city" );
+                        $('button.col4-input').css("color","#727272");
+                        $('button.col4-input:hover').css("color","#727272");
+                    }else{
+                        $('button.col4-input').html( $(this).text() );
+                        $('button.col4-input').css("color","#231f20");
+                        $('button.col4-input:hover').css("color","#231f20");
+                    }
+                });
             }
         }
     );
-}
+};
 
 var initMap = () => {
 	// Create a map object and specify the DOM element for display.
@@ -236,4 +275,4 @@ var initMap = () => {
 	zoomControl: true,
 	zoom: 11
 	});
-}
+};
