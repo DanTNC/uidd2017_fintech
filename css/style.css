@@ -399,8 +399,9 @@ input.col4-input {
 }
 
 .dropdown-menu {
-    left: 14vw;
+    left: auto;
     min-width: 9vw;
+    right: -0.1vw;
 }
 
 .row5 {
