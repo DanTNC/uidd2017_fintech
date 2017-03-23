@@ -214,6 +214,7 @@ var correct_add = (Ar, str) => {
 					}
 				}
 			}
+			if ((rate == str.length)&&(str1.length == str.length)) rate++;
 			pati.push([rate,str1]);
 		}
     });
