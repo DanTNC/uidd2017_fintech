@@ -98,17 +98,21 @@ $(document).ready(function(){
     });
 
     $('#Google_Play').mouseover(function(){
-        $('#Google_Play img').attr("src","img/Google Play hover.png");
+        $('#Google_Play img:eq(0)').css("display","none");
+        $('#Google_Play img:eq(1)').css("display","block");
     });
     $('#Apple_Store').mouseover(function(){
-        $('#Apple_Store img').attr("src","img/Apple Store hover.png");
+        $('#Apple_Store img:eq(0)').css("display","none");
+        $('#Apple_Store img:eq(1)').css("display","block");
     });
 
     $('#Google_Play').mouseout(function(){
-        $('#Google_Play img').attr("src","img/Google Play.png");
+        $('#Google_Play img:eq(0)').css("display","block");
+        $('#Google_Play img:eq(1)').css("display","none");
     });
     $('#Apple_Store').mouseout(function(){
-        $('#Apple_Store img').attr("src","img/Apple Store.png");
+        $('#Apple_Store img:eq(0)').css("display","block");
+        $('#Apple_Store img:eq(1)').css("display","none");
     });
 
     $('.dropdown-menu li a').click(function(){
