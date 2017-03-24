@@ -51,3 +51,27 @@
 .pace.pace-inactive {
   display: none;
 }
+
+.pace .pace-progress:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0.5vw;
+  content: attr(data-progress-text);
+  font-family: 'Quicksand-Bold';
+  font-weight: 100;
+  font-size: 0.5vw;
+  line-height: 1;
+  text-align: right;
+  color: #231f20;
+}
+
+@font-face {
+    font-family: 'Quicksand-Bold';
+    src:url('../fonts/Quicksand-Bold.ttf.woff') format('woff'),
+        url('../fonts/Quicksand-Bold.ttf.svg#Quicksand-Bold') format('svg'),
+        url('../fonts/Quicksand-Bold.ttf.eot'),
+        url('../fonts/Quicksand-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
