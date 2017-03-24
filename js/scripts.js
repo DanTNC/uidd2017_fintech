@@ -62,6 +62,12 @@ if ('webkitSpeechRecognition' in window) {
 
 $(document).ready(function(){
 
+    // site preloader -- also uncomment the div in the header and the css style for #preloader
+    $(window).load(function(){
+        $('#preloader').fadeOut('slow',function(){$(this).remove();});
+    });
+
+
     if($(window).scrollTop()!=0){
         $('.navbar').css("padding-top","0vw");
         $('.navbar').css("padding-bottom","1.3vw");
